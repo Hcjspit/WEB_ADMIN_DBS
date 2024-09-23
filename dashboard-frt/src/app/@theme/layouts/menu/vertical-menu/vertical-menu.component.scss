@@ -1,0 +1,80 @@
+@import '../../../styles/theme-palette-colors.scss';
+
+.w-50 {
+  width: 50%;
+}
+
+.navbar-container {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 20px);
+}
+
+.navbar-scroll {
+  flex: 1;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.navbar-content {
+  flex: 1;
+}
+
+.logout-space {
+  flex-shrink: 0;
+  height: 20px; /* Altezza riservata per il tasto di logout */
+}
+
+.logout-container {
+  width: 100%;
+  background: transparent; /* O il colore che preferisci per il background del toolbar */
+  z-index: 1000; /* Assicurati che il tasto sia visibile sopra altri elementi */
+}
+
+.header-button {
+  display: flex;
+  justify-content: center; /* Per spostare il pulsante a destra */
+}
+
+.logout {
+  color: white !important;
+  background-color: red;
+  border-radius: 5px;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: darkred;
+    box-shadow: 2px gray;
+  }
+
+  .lift-on-click {
+    transition: transform 0.2s ease;
+  }
+
+  .lift-on-click:active {
+    transform: translateY(-2px);
+  }
+
+  :host {
+    display: block;
+    color: var(--text-color) !important;
+  }
+
+  .menu-item {
+    color: var(--text-color) !important;
+    background-color: var(--background-color) !important;
+    &:hover {
+      background-color: var(--accent-100) !important;
+    }
+  }
+
+  .nav-link {
+    color: var(--text-color) !important;
+    &:hover {
+      color: var(--primary-color) !important;
+    }
+  }
+}

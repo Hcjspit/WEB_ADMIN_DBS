@@ -1,0 +1,23 @@
+<mat-menu #menu="matMenu" id="menu">
+  <a mat-menu-item>Today</a>
+  <a mat-menu-item>Weekly</a>
+  <a mat-menu-item>Monthly</a>
+</mat-menu>
+
+<app-card [showHeader]="true" cardTitle="Top 4 Lines" actionClass="card-action block" [padding]="20">
+  <ng-template #headerOptionsTemplate>
+    <a [matMenuTriggerFor]="menu" class="avatar avatar-s hover"><i class="ti ti-dots-vertical f-18"></i></a>
+  </ng-template>
+  <apx-chart
+    [series]="topLineDataChart.series!"
+    [chart]="topLineDataChart.chart!"
+    [colors]="incomeColors"
+    [labels]="topLineDataChart.labels!"
+    [plotOptions]="topLineDataChart.plotOptions!"
+    [fill]="topLineDataChart.fill!"
+    [legend]="topLineDataChart.legend!"
+    [responsive]="topLineDataChart.responsive!"
+    [dataLabels]="topLineDataChart.dataLabels!"
+  >
+  </apx-chart>
+</app-card>

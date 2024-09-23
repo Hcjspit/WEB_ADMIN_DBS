@@ -1,0 +1,22 @@
+<div class="line-selector-container">
+  <div class="line-selector">
+    <select (change)="onLineChange($event)">
+      <option value="">Select line</option>
+      <option *ngFor="let line of lines" [value]="line.id">{{ line.name }}</option>
+    </select>
+  </div>
+  <div class="row_limit">
+    <select (change)="onLimitChange($event)">
+      <option *ngFor="let limit of limits" [value]="limit.value">Row: {{ limit.display }}</option>
+    </select>
+  </div>
+
+  <label for="style">STYLE:</label>
+  <input id="style" [(ngModel)]="style" (input)="onStyleChange($event)" placeholder="Enter style" />
+
+  <label for="stage">STAGE:</label>
+  <input id="stage" [(ngModel)]="stage" (input)="onStageChange($event)" placeholder="Enter stage" />
+
+  <label for="name">NAME:</label>
+  <input id="name" [(ngModel)]="name" (input)="onNameChange($event)" placeholder="Enter name" />
+</div>

@@ -1,0 +1,109 @@
+// @import '../../../@theme/styles/theme-palette-colors.scss';
+@import '../../../../scss/variables';
+.able-user-group .avatar {
+  width: 30px;
+  height: 30px;
+}
+
+.chart-body {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--accent-100);
+}
+
+.border {
+  border: 1px solid var(--accent-300);
+}
+
+.border-50 {
+  border-radius: 50%;
+}
+
+.user-status {
+  font-size: 0.75em !important;
+  padding: 0.25em 0.9em;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+.card-head {
+  margin: 0px 10px;
+}
+
+.income-value {
+  background: var(--accent-100);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.line {
+  text-align: center;
+}
+.gap {
+  gap: 1rem;
+
+  .dot {
+    border-radius: 50%;
+
+    &.primary {
+      background: var(--primary-500);
+    }
+  }
+}
+
+// .able-user-group .avatar {
+//   width: 30px;
+//   height: 30px;
+// }
+
+// .chart-body {
+//   margin-top: 16px;
+//   padding: 16px;
+//   border-radius: 8px;
+//   background: var(--background-color); // Usa la variabile CSS per il background
+// }
+
+// .border {
+//   border: 1px solid var(--primary-color); // Usa la variabile CSS per il colore del bordo
+// }
+
+// .border-50 {
+//   border-radius: 50%;
+// }
+
+// .user-status {
+//   font-size: 0.75em !important;
+//   padding: 0.25em 0.9em;
+//   display: inline-block;
+//   border-radius: 8px;
+//   background-color: var(--background-color); // Usa la variabile CSS per il background
+//   color: var(--text-color); // Usa la variabile CSS per il testo
+// }
+
+// .card-head {
+//   margin: 0px 10px;
+// }
+
+// .income-value {
+//   background: var(--background-color); // Usa la variabile CSS per il background
+//   padding: 16px;
+//   border-radius: 8px;
+// }
+
+// .line {
+//   text-align: center;
+// }
+
+// .gap {
+//   gap: 1rem;
+
+//   .dot {
+//     border-radius: 50%;
+//     background: var(--background-color); // Usa la variabile CSS per il background
+
+//     &.primary {
+//       background: var(--primary-color); // Usa la variabile CSS per il colore primario
+//     }
+//   }
+// }

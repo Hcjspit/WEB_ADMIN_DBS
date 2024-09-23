@@ -1,0 +1,50 @@
+<app-card [showHeader]="false">
+  <div class="flex align-item-center">
+    <div class="flex-shrink-0">
+      <div class="avatar avatar-s bg-warning-50 text-warning-500">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="24"
+          height="24"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="1.75"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          class="icon icon-tabler icons-tabler-outline icon-tabler-chart-histogram"
+        >
+          <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+          <path d="M3 3v18h18" />
+          <path d="M20 18v3" />
+          <path d="M16 16v5" />
+          <path d="M12 13v8" />
+          <path d="M8 16v5" />
+          <path d="M3 11c6 0 5 -5 9 -5s3 5 9 5" />
+        </svg>
+      </div>
+    </div>
+    <div class="flex-grow-1 card-head">
+      <h5 class="m-b-0 f-w-600">AVG Tracking</h5>
+    </div>
+  </div>
+  <div class="chart-body">
+    <div class="m-t-15 row align-item-center">
+      <div class="col-7">
+        <apx-chart
+          [series]="avgTimeProcessingChart.series!"
+          [chart]="avgTimeProcessingChart.chart!"
+          [colors]="avgTimeProcessingChart.colors!"
+          [plotOptions]="avgTimeProcessingChart.plotOptions!"
+          [xaxis]="avgTimeProcessingChart.xaxis!"
+          [tooltip]="avgTimeProcessingChart.tooltip!"
+        >
+        </apx-chart>
+      </div>
+      <div class="col-5 text-end">
+        <h5 class="m-b-5">{{ avgCheckedQty.toFixed(0) }}</h5>
+        <h6 class="text-warning-500 m-b-0"><i class="ti ti-arrow-up-right"></i>{{ percentage.toFixed(2) }}%</h6>
+      </div>
+    </div>
+  </div>
+</app-card>

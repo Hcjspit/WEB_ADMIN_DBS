@@ -1,0 +1,69 @@
+<!-- <div class="auth-main">
+  <div class="auth-wrapper version-1">
+    <div class="auth-form">
+      <div class="auth-background">
+        <div class="yellow-circle"></div>
+        <div class="red-circle"></div>
+      </div>
+      <div class="main-form">
+        <app-card [showHeader]="false" class="auth-form-card" [padding]="40">
+          <div class="text-center m-b-25">
+            <img src="../../../../../assets/images/LogoCerchioHR.png" alt="" class="logoCerchioHR" />
+          </div>
+          <h4 class="text-center m-b-25 mt-25 f-20 f-w-500">Login DBS Dashboard</h4>
+          <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+            <div class="text-start">
+              <label for="email" class="f-w-500">Enter Your Username</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input matInput formControlName="email" required />
+                @if (f['email'].invalid && f['email'].touched) {
+                  <mat-error>{{ getErrorMessage('email') }}</mat-error>
+                }
+              </mat-form-field>
+              <label for="password" class="f-w-500">Enter your password</label>
+              <mat-form-field appearance="outline" class="w-100 m-t-5">
+                <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" />
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+                  <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+                </button>
+                @if (f['password'].invalid && f['password'].touched) {
+                  <mat-error>{{ getErrorMessage('password') }}</mat-error>
+                }
+              </mat-form-field>
+            </div>
+            @if (error) {
+              <div class="error-message">{{ error }}</div>
+            }
+            <div class="grid">
+              <button mat-flat-button color="primary" class="m-t-15 btnlogin" [disabled]="loading">Login</button>
+            </div>
+          </form>
+        </app-card>
+      </div>
+    </div>
+  </div>
+</div> -->
+<div class="auth-form">
+  <h1 class="text-center m-b-25 mt-25 f-20 f-w-500 title">Login to DBS DASHBOARD</h1>
+  <form [formGroup]="loginForm" (ngSubmit)="onSubmit()">
+    <mat-form-field appearance="outline" class="w-100 m-t-5">
+      <mat-label>Username</mat-label>
+      <input matInput formControlName="email" required />
+      <mat-error *ngIf="f['email'].invalid && f['email'].touched">{{ getErrorMessage('email') }}</mat-error>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="w-100 m-t-5">
+      <mat-label>Password</mat-label>
+      <input matInput [type]="hide ? 'password' : 'text'" formControlName="password" />
+      <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'" [attr.aria-pressed]="hide">
+        <mat-icon>{{ hide ? 'visibility_off' : 'visibility' }}</mat-icon>
+      </button>
+      <mat-error *ngIf="f['password'].invalid && f['password'].touched">{{ getErrorMessage('password') }}</mat-error>
+    </mat-form-field>
+    @if (error) {
+      <div class="error-message">{{ error }}</div>
+    }
+    <div class="grid">
+      <button mat-flat-button color="primary" class="m-t-15 btnlogin" [disabled]="loading"> <h1 class="li">Login</h1></button>
+    </div>
+  </form>
+</div>

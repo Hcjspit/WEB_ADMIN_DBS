@@ -1,0 +1,90 @@
+<div *ngIf="lineSelected; else noLineSelected">
+  <div *ngIf="noDataFound; else dataFound">
+    <p>No data found for the selected line. Please select a different line.</p>
+  </div>
+</div>
+
+<ng-template #dataFound>
+  <table>
+    <thead>
+      <tr>
+        <th (click)="sortData('P40_STYLE_DESC')" class="thButton"
+          >STYLE
+          <span *ngIf="sortColumn === 'P40_STYLE_DESC'">
+            {{ sortDirection === 'asc' ? '▲' : '▼' }}
+          </span></th
+        >
+        <th (click)="sortData('P40_MACHINE_POSITION')" class="thButton"
+          >POS
+          <span *ngIf="sortColumn === 'P40_MACHINE_POSITION'">
+            {{ sortDirection === 'asc' ? '▲' : '▼' }}
+          </span></th
+        >
+        <th (click)="sortData('P40_STAGE_DESC')" class="thButton"
+          >STAGE
+          <span *ngIf="sortColumn === 'P40_STAGE_DESC'">
+            {{ sortDirection === 'asc' ? '▲' : '▼' }}
+          </span></th
+        >
+        <th (click)="sortData('P40_OPERATOR_ID')" class="thButton"
+          >OPERATOR
+          <span *ngIf="sortColumn === 'P40_OPERATOR_ID'">
+            {{ sortDirection === 'asc' ? '▲' : '▼' }}
+          </span></th
+        >
+        <th (click)="sortData('G25_DS_OPERATORE')" class="thButton"
+          >NAME
+          <span *ngIf="sortColumn === 'G25_DS_OPERATORE'">
+            {{ sortDirection === 'asc' ? '▲' : '▼' }}
+          </span></th
+        >
+        <th (click)="sortData('LINE_TARGET')" class="thButton"
+          >TARGET
+          <span *ngIf="sortColumn === 'LINE_TARGET'">
+            {{ sortDirection === 'asc' ? '▲' : '▼' }}
+          </span></th
+        >
+        <th (click)="sortData('ACHIEVED')" class="thButton"
+          >ACHIVED
+          <span *ngIf="sortColumn === 'ACHIEVED'">
+            {{ sortDirection === 'asc' ? '▲' : '▼' }}
+          </span></th
+        >
+        <th>07:00-07:59</th>
+        <th>08:00-08:59</th>
+        <th>09:00-09:59</th>
+        <th>10:00-10:59</th>
+        <th>11:00-11:59</th>
+        <th>12:00-12:59</th>
+        <th>13:00-13:59</th>
+        <th>14:00-14:59</th>
+        <th>15:00-15:59</th>
+        <!-- Aggiungi altre colonne necessarie -->
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of workedPiecesData">
+        <td>{{ item.P40_STYLE_DESC }}</td>
+        <td>{{ item.P40_MACHINE_POSITION }}</td>
+        <td>{{ item.P40_STAGE_DESC }}</td>
+        <td>{{ item.P40_OPERATOR_ID }}</td>
+        <td>{{ item.G25_DS_OPERATORE }}</td>
+        <td>{{ item.LINE_TARGET }}</td>
+        <td>{{ item.ACHIEVED }}</td>
+        <td [ngClass]="getCellClass(item.H1)">{{ item.H1 }}</td>
+        <td [ngClass]="getCellClass(item.H2)">{{ item.H2 }}</td>
+        <td [ngClass]="getCellClass(item.H3)">{{ item.H3 }}</td>
+        <td [ngClass]="getCellClass(item.H4)">{{ item.H4 }}</td>
+        <td [ngClass]="getCellClass(item.H5)">{{ item.H5 }}</td>
+        <td [ngClass]="getCellClass(item.H6)">{{ item.H6 }}</td>
+        <td [ngClass]="getCellClass(item.H7)">{{ item.H7 }}</td>
+        <td [ngClass]="getCellClass(item.H8)">{{ item.H8 }}</td>
+        <td [ngClass]="getCellClass(item.H9)">{{ item.H9 }}</td>
+      </tr>
+    </tbody>
+  </table>
+</ng-template>
+
+<ng-template #noLineSelected>
+  <p>Please select a line to view the table data.</p>
+</ng-template>

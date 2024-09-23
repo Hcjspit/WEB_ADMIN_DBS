@@ -1,0 +1,47 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  border-radius: 10px;
+  overflow: hidden;
+  background-color: var(--accent-50);
+  color: var(--text-color);
+}
+
+th,
+td {
+  border: 1px solid var(--accent-100);
+  padding: 8px;
+  text-align: center;
+}
+
+th {
+  background-color: var(--accent-300);
+}
+
+tr:nth-child(even) {
+  background-color: var(--accent-300);
+}
+
+tr:nth-child(odd) {
+  background-color: var(--accent-50);
+}
+
+.green-cell {
+  background-color: rgb(15, 161, 15);
+  color: var(--text-color);
+}
+
+.yellow-cell {
+  background-color: rgb(165, 165, 43);
+  color: var(--text-color);
+}
+
+.red-cell {
+  background-color: red;
+  color: var(--text-color);
+}
+
+.dark-green-cell {
+  background-color: darkgreen;
+  color: var(--text-color);
+}

@@ -1,0 +1,7 @@
+<app-card [showHeader]="false" [padding]="20">
+  <div class="flex container justify-content-center">
+    <div class="clock">
+      {{ time | date: 'HH:mm:ss' }}
+    </div>
+  </div>
+</app-card>

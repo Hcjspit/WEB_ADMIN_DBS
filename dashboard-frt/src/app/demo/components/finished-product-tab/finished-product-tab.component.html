@@ -1,0 +1,69 @@
+<app-card cardTitle="Finished Products" [showHeader]="true" actionClass="card-action block" [padding]="0">
+  <ng-template #headerOptionsTemplate>
+    <a [matMenuTriggerFor]="menu" class="avatar avatar-s hover"><i class="ti ti-dots-vertical f-18"></i></a>
+  </ng-template>
+  <mat-tab-group mat-stretch-tabs="false" class="transactions" mat-align-tabs="start">
+    <mat-tab label="All Line" class="allLine">
+      <ng-container *ngIf="outputAndKey">
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let output of outputAndKey" class="list-group-item">
+            <div class="d-flex align-items-center">
+              <div class="flex-grow-1 ml-3">
+                <div class="row g-1">
+                  <div class="col-6">
+                    <h6 class="mb-0"
+                      >Line: <strong>{{ output.P40_CD_LINEA }}</strong></h6
+                    >
+                    <p class="text-muted mb-0"
+                      >Code: <strong>{{ output.P40_KEY_G22 }}</strong></p
+                    >
+                  </div>
+                  <div class="col-6 text-end">
+                    <h6 class="mb-1"
+                      >Finished Products: <strong>{{ output.P40_QTA_LAVORATA }}</strong></h6
+                    >
+                    <!-- <p class="{{ output.amount_type }} mb-0"><i class="{{ output.amount_position }}"></i> {{ output.percentage }} </p> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </ng-container>
+    </mat-tab>
+    <mat-tab label="Current Line" class="currentLine">
+      <ng-container *ngIf="outputAndKeyLine">
+        <ul class="list-group list-group-flush">
+          <li *ngFor="let output of outputAndKeyLine" class="list-group-item">
+            <div class="d-flex align-items-center">
+              <div class="flex-grow-1 ml-3">
+                <div class="row g-1">
+                  <div class="col-6">
+                    <h6 class="mb-0"
+                      >Line: <strong>{{ output.P40_CD_LINEA }}</strong></h6
+                    >
+                    <p class="text-muted mb-0"
+                      >Code: <strong>{{ output.P40_KEY_G22 }}</strong></p
+                    >
+                  </div>
+                  <div class="col-6 text-end">
+                    <h6 class="mb-1"
+                      >Finished Products: <strong>{{ output.P40_QTA_LAVORATA }}</strong></h6
+                    >
+                    <!-- <p class="{{ output.amount_type }} mb-0"><i class="{{ output.amount_position }}"></i> {{ output.percentage }} </p> -->
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </ng-container>
+    </mat-tab>
+  </mat-tab-group>
+</app-card>
+
+<mat-menu #menu="matMenu">
+  <a mat-menu-item>Today</a>
+  <a mat-menu-item>Weekly</a>
+  <a mat-menu-item>Monthly</a>
+</mat-menu>

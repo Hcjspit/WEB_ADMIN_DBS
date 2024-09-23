@@ -1,0 +1,12 @@
+.flex-container {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.clock {
+  font-size: 3.5rem; // Aumenta la dimensione del font secondo le tue necessità
+  font-weight: bold;
+  text-align: center;
+  font-family: 'Impact', 'Haettenschweiler', 'Arial Narrow Bold', 'sans-serif';
+}

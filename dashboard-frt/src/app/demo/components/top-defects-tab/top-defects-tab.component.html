@@ -1,0 +1,37 @@
+<app-card cardTitle="Top 3 Defects">
+  <div class="grid gap">
+    <ng-container *ngIf="defects && defects.length > 0; else noDefects">
+      <ng-container *ngFor="let defect of defects">
+        <div class="flex align-item-center">
+          <div class="flex-grow-1">
+            <p class="m-b-0 grid text-start">
+              <span class="text-muted text-truncate w-100 causale"
+                ><strong>{{ defect.Z21_DS_CAUSALE_RIPRESO }}</strong></span
+              >
+              <span class="text-muted text-truncate w-100"
+                >Number of Defects: <strong>{{ defect.NO_DEFS }}</strong></span
+              >
+              <span class="text-muted text-truncate w-100"
+                >Color ID: <strong>{{ defect.COLORID }}</strong></span
+              >
+            </p>
+          </div>
+        </div>
+      </ng-container>
+      <ng-container *ngFor="let placeholder of placeholders">
+        <div class="flex align-item-center placeholder">
+          <div class="flex-grow-1">
+            <p class="m-b-0 grid text-start">
+              <span class="text-muted text-truncate w-100 causale"><strong>&nbsp;</strong></span>
+              <span class="text-muted text-truncate w-100">&nbsp;</span>
+              <span class="text-muted text-truncate w-100">&nbsp;</span>
+            </p>
+          </div>
+        </div>
+      </ng-container>
+    </ng-container>
+    <ng-template #noDefects>
+      <p>No defects found.</p>
+    </ng-template>
+  </div>
+</app-card>

@@ -1,0 +1,50 @@
+@import '../../../../scss/variables';
+
+.line-selector-container {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.line-selector,
+.row-limit {
+  margin-right: 25px;
+}
+
+.filter-container {
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 25px;
+}
+
+.filter {
+  margin-right: 25px;
+}
+
+label {
+  margin-left: 20px;
+  font-size: larger;
+}
+
+select,
+input {
+  width: 200px;
+  padding: 8px;
+  border-radius: 5px;
+  border: 1px solid var(--accent-100);
+  background-color: var(--accent-50);
+  color: var(--text-color);
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s ease;
+
+  &:hover {
+    border-color: var(--accent-300);
+  }
+
+  &:focus {
+    border-color: var(--accent-300);
+    box-shadow: 0 0 5px var(--accent-300);
+  }
+}

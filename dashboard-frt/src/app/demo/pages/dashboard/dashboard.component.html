@@ -1,0 +1,36 @@
+<div class="row widget-chart p-t-25">
+  <div *ngIf="selectedLine" class="row line">
+    <div class="col-md-3"
+      ><app-card [showHeader]="false">
+        <h3
+          >Selected: <strong>{{ selectedLine }}</strong></h3
+        >
+      </app-card></div
+    >
+  </div>
+  <div class="col-md-6 col-xxl-3">
+    <app-checked-qty-chart></app-checked-qty-chart>
+  </div>
+  <div class="col-md-6 col-xxl-3">
+    <app-avg-tracking-chart></app-avg-tracking-chart>
+  </div>
+  <div class="col-md-6 col-xxl-3">
+    <app-active-workers-chart></app-active-workers-chart>
+  </div>
+  <div class="col-md-6 col-xxl-3">
+    <app-active-machines-chart></app-active-machines-chart>
+  </div>
+  <div class="col-lg-9">
+    <app-efficiency-perc-chart></app-efficiency-perc-chart>
+  </div>
+  <div class="col-lg-3">
+    <app-top-defects-tab></app-top-defects-tab>
+    <app-clock></app-clock>
+  </div>
+  <div class="col-md-6">
+    <app-finished-product-tab></app-finished-product-tab>
+  </div>
+  <div class="col-md-6">
+    <app-top-line-chart></app-top-line-chart>
+  </div>
+</div>

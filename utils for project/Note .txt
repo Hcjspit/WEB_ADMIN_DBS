@@ -1,0 +1,16 @@
+DA SVILUPPARE:  /-/
+
+----------------------------------------------------------------------------------------
+
+SISTEMAZIONI: -Connessione al server soocket solo nel momento della richiesta dati;
+(necessarie)  -Autenticazione solida solo per uso locale:(sistemazione logica auth con token di sessione, non localstorage);
+              -Implementazione protocollo https:(ora è in uso il protocollo http, no SSH key)    
+              -Logica di routing (senza perdite di memoria da Dashboard ecc.)   
+              -Logica del ordinamento: (anche quando si seleziona un filtro deve capire che deve ordinare)
+
+----------------------------------------------------------------------------------------
+
+MIGLIORAMENTI: -Gestione di più istanze del socket, per richiedere i dati solo quando necessario e avere una connessione specifica 
+                per una richiesta specifica:(con intervalli specifici in base alla richiesta);
+               -Miglioramento grafico e rendering template:(super_opzionale);
+               -Pulizia accurata del codice, sistemazione delle cartelle: (opzionale);

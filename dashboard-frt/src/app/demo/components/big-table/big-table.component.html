@@ -1,0 +1,50 @@
+@if (bigTableData!.length > 0) {
+  <div>
+    <table>
+      <thead>
+        <tr>
+          <th>LINE</th>
+          <th>MODEL</th>
+          <th>TOTAL MACHINES</th>
+          <th>ACTIVE WORKERS</th>
+          <th>TARGET</th>
+          <th>CHECKED QTY</th>
+          <th>DEFECTED PCS</th>
+          <th>REJECTED PCS</th>
+          <th>OUTPUT</th>
+          <th>EFFICIENCY %</th>
+          <th>EFFICIENCY YSTD %</th>
+          <th>MODEL YSTD</th>
+          <th>DHU %</th>
+          <th>EFF TOTAL%</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let data of bigTableData">
+          <td>{{ data.CD_LINEA }}</td>
+          <td>{{ data.G60_CODICE }}</td>
+          <td>{{ data.TOTAL_MACHINES }}</td>
+          <td>{{ data.ACTIVE_CADRE }}</td>
+          <td>{{ data.TARGET }}</td>
+          <td>{{ data.CHECKED_QTY }}</td>
+          <td>{{ data.DEFECTED_PCS }}</td>
+          <td>{{ data.REJECTED_PCS }}</td>
+          <td>{{ data.OUTPUT }}</td>
+          <td [ngClass]="getCellEfficiencyColorClass(data.EFFICIENCY_PERC!)">{{ data.EFFICIENCY_PERC }}%</td>
+          <td [ngClass]="getCellEfficiencyColorClass(data.EFFICIENCY_PERC_YSTD!)">{{ data.EFFICIENCY_PERC_YSTD }}%</td>
+          <td>{{ data.G60_CODICE_YSTD }}</td>
+          <td [ngClass]="getCellDhuColorClass(data.DHU_PERC!)">{{ data.DHU_PERC }}%</td>
+          <td>{{ data.EFF_TOTAL }}%</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div *ngIf="bigTableData!.length === 0">
+      <p>No data available</p>
+    </div>
+  </div>
+}
+
+<div *ngIf="bigTableData!.length === 0">
+  <p>No data available</p>
+</div>

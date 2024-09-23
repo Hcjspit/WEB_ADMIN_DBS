@@ -1,0 +1,74 @@
+@import '../../../@theme/styles/theme-palette-colors.scss';
+
+.able-user-group .avatar {
+  width: 30px;
+  height: 30px;
+}
+
+.chart-body {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 8px;
+  background: var(--accent-100);
+}
+
+.border {
+  border: 1px solid var(--accent-300);
+}
+
+.border-50 {
+  border-radius: 50%;
+}
+
+.user-status {
+  font-size: 0.75em !important;
+  padding: 0.25em 0.9em;
+  display: inline-block;
+  border-radius: 8px;
+}
+
+.card-head {
+  margin: 0px 10px;
+}
+
+.income-value {
+  background: var(--accent-100);
+  padding: 16px;
+  border-radius: 8px;
+}
+
+.gap {
+  gap: 1rem;
+
+  .dot {
+    border-radius: 50%;
+    background: map-get($yellow-theme, 500);
+
+    &.primary {
+      background: var(--primary-500);
+    }
+  }
+}
+
+.causale {
+  color: var(--text-color);
+}
+
+span > strong {
+  color: var(--text-color);
+}
+
+.top-defects-tab {
+  display: flex;
+  flex-direction: column;
+  min-height: 150px; /* Altezza minima per 3 difetti */
+}
+
+.defect,
+.placeholder {
+  height: 65px; /* Altezza uguale a quella dei difetti reali */
+}
+
+.placeholder {
+  visibility: hidden; /* I placeholder sono invisibili ma occupano spazio */
+}
